@@ -10,7 +10,7 @@ sleepInterval = 30
 # make sure you don't have a file of the same name on your drive and,
 # if you do, rename this file below. you can delete the file when 
 # you're done using the program
-writeFile = '___kda___'
+fileToWrite = '___kda___'
 
 
 # ----------------------------------------------------------------------------
@@ -24,8 +24,9 @@ from time import sleep, gmtime, strftime
 
 # this function writes the current time to a file titled ___kda___.txt
 # to each drive in the drives array at the interval you select 
-def writeFile(_drives):
-	filename = writeFile
+def writeFile(drives, writeFile):
+	filename = fileToWrite
+
 	strToWrite = strftime('%Y-%m-%d %H:%M:%S', gmtime())
 
 	print('------------------------')
@@ -47,5 +48,5 @@ def writeFile(_drives):
 # cmd+x (Mac), or just close the console window.
 if __name__=="__main__":
 	while True:
-		writeFile(drives)
+		writeFile(drives, fileToWrite)
 		sleep(sleepInterval)
