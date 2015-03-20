@@ -6,6 +6,12 @@ drives = ['D', 'E']
 # the number of seconds you'd like to wait before calling the drive
 sleepInterval = 30
 
+# this is the file the program will write at ever interval
+# make sure you don't have a file of the same name on your drive and,
+# if you do, rename this file below. you can delete the file when 
+# you're done using the program
+writeFile = '___kda___'
+
 
 # ----------------------------------------------------------------------------
 # All the boring stuff happens below here. Just edit the drives and
@@ -19,7 +25,7 @@ from time import sleep, gmtime, strftime
 # this function writes the current time to a file titled ___kda___.txt
 # to each drive in the drives array at the interval you select 
 def writeFile(_drives):
-	filename = '___kda___.txt'
+	filename = writeFile
 	strToWrite = strftime('%Y-%m-%d %H:%M:%S', gmtime())
 
 	print('------------------------')
